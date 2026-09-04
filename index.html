@@ -124,7 +124,10 @@
     </header>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-50   lg:hidden flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300 bg-[#09090b] border-l border-zinc-800">
+    
+    <!-- Mobile Menu Backdrop Overlay -->
+    <div id="menu-backdrop" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[90] hidden transition-opacity duration-300"></div>
+<div id="mobile-menu" class="fixed inset-y-0 right-0 z-[100] w-full max-w-xs sm:max-w-sm bg-[#09090b] border-l border-zinc-800 text-white p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 lg:hidden shadow-2xl overflow-y-auto">
         <div>
             <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
                 <a href="#" class="flex items-center gap-2">
@@ -765,7 +768,7 @@
     </div>
 
     <!-- Sticky Mobile Action Bar -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-t border-zinc-800 p-3 flex items-center gap-3">
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-lg border-t border-zinc-800 p-3 flex items-center gap-3">
         <a href="tel:+919265785688" class="flex-1 h-12 rounded-xl border border-zinc-700 bg-surface text-textPrimary text-sm font-bold flex items-center justify-center gap-2">
             <i data-lucide="phone" class="w-4 h-4 text-primary"></i>
             <span>Call Now</span>
@@ -866,6 +869,7 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
+        const menuBackdrop = document.getElementById('menu-backdrop');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
         function toggleMobileMenu() {
