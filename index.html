@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xtreme Fitness Gym | Surat's Premier Fitness Center</title>
+    <meta name="description" content="Unleash your ultimate potential at Xtreme Fitness Gym in Salabatpura, Surat. Expert trainers, modern equipment, weight training, cardio, and station workouts. Open Daily 6 AM - 10 PM.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0A0A0C',
+                        surface: '#18181B',
+                        primary: '#FF2A40',
+                        'primary-hover': '#FF4D61',
+                        secondary: '#10B981',
+                        textPrimary: '#FAFAFA',
+                        textMuted: '#A1A1AA',
+                    },
+                    fontFamily: {
+                        syne: ['Syne', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0C;
+            color: #FAFAFA;
+        }
+        h1, h2, h3, h4, h5, h6, .font-syne {
+            font-family: 'Syne', sans-serif;
+        }
+        .glow-red {
+            box-shadow: 0 0 40px -10px rgba(255, 42, 64, 0.3);
+        }
+        .glow-red-sm {
+            box-shadow: 0 0 20px -5px rgba(255, 42, 64, 0.4);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0C;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF2A40;
+        }
+    </style>
+</head>
+<body class="bg-background text-textPrimary overflow-x-hidden pb-20 md:pb-0">
+
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-primary/80 via-primary to-primary/80 text-white text-xs sm:text-sm font-medium py-2 px-4 text-center relative z-50 flex items-center justify-center gap-2">
+        <i data-lucide="zap" class="w-4 h-4 animate-pulse"></i>
+        <span>Open Daily: 6:00 AM - 10:00 PM • Claim Your Free Trial Session Today!</span>
+        <a href="https://wa.me/919265785688?text=Hi,%20I%20want%20to%20claim%20my%20Free%20Trial%20at%20Xtreme%20Fitness%20Gym!" target="_blank" class="hidden sm:inline-block underline font-bold ml-2 hover:text-zinc-200">Book Now &rarr;</a>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-background/80 border-b border-zinc-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center glow-red-sm group-hover:scale-105 transition-transform">
+                    <i data-lucide="dumbbell" class="w-6 h-6 text-white"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-syne text-xl sm:text-2xl font-extrabold tracking-wider text-white">XTREME<span class="text-primary">FITNESS</span></span>
+                    <span class="text-[10px] text-textMuted tracking-widest uppercase font-semibold">Surat</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-textMuted">
+                <a href="#about" class="hover:text-primary transition-colors">About</a>
+                <a href="#services" class="hover:text-primary transition-colors">Workouts</a>
+                <a href="#why-us" class="hover:text-primary transition-colors">Why Us</a>
+                <a href="#gallery" class="hover:text-primary transition-colors">Gallery</a>
+                <a href="#reviews" class="hover:text-primary transition-colors">Reviews</a>
+                <a href="#faq" class="hover:text-primary transition-colors">FAQ</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Location</a>
+            </nav>
+
+            <!-- Action CTAs -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="tel:+919265785688" class="h-11 px-4 rounded-xl border border-zinc-700 hover:border-primary text-textPrimary text-sm font-semibold flex items-center gap-2 transition-all hover:bg-zinc-800/50">
+                    <i data-lucide="phone" class="w-4 h-4 text-primary"></i>
+                    <span>Call Us</span>
+                </a>
+                <a href="https://wa.me/919265785688?text=Hi,%20I%20want%20to%20join%20Xtreme%20Fitness%20Gym!" target="_blank" class="h-11 px-5 rounded-xl bg-primary hover:bg-primary-hover text-white text-sm font-semibold flex items-center gap-2 glow-red-sm transition-all hover:scale-105">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl bg-zinc-900 border border-zinc-800 text-textPrimary hover:text-primary transition-colors focus:outline-none" aria-label="Toggle Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-background/95 backdrop-blur-xl lg:hidden flex flex-col justify-between p-6 transform translate-x-full transition-transform duration-300">
+        <div>
+            <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
+                <a href="#" class="flex items-center gap-2">
+                    <div class="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
+                        <i data-lucide="dumbbell" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="font-syne text-lg font-extrabold text-white">XTREME<span class="text-primary">FITNESS</span></span>
+                </a>
+                <button id="mobile-menu-close" class="p-2 rounded-xl bg-zinc-900 border border-zinc-800 text-textMuted hover:text-white">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-5 pt-8 text-lg font-medium">
+                <a href="#about" class="mobile-nav-link text-textPrimary hover:text-primary transition-colors flex items-center justify-between">About Us <i data-lucide="chevron-right" class="w-5 h-5 text-textMuted"></i></a>
+                <a href="#services" class="mobile-nav-link text-textPrimary hover:text-primary transition-colors flex items-center justify-between">Workouts & Services <i data-lucide="chevron-right" class="w-5 h-5 text-textMuted"></i></a>
+                <a href="#why-us" class="mobile-nav-link text-textPrimary hover:text-primary transition-colors flex items-center justify-between">Why Choose Us <i data-lucide="chevron-right" class="w-5 h-5 text-textMuted"></i></a>
+                <a href="#gallery" class="mobile-nav-link text-textPrimary hover:text-primary transition-colors flex items-center justify-between">Gym Gallery <i data-lucide="chevron-right" class="w-5 h-5 text-textMuted"></i></a>
+                <a href="#reviews" class="mobile-nav-link text-textPrimary hover:text-primary transition-colors flex items-center justify-between">Customer Reviews <i data-lucide="chevron-right" class="w-5 h-5 text-textMuted"></i></a>
+                <a href="#faq" class="mobile-nav-link text-textPrimary hover:text-primary transition-colors flex items-center justify-between">FAQs <i data-lucide="chevron-right" class="w-5 h-5 text-textMuted"></i></a>
+                <a href="#contact" class="mobile-nav-link text-textPrimary hover:text-primary transition-colors flex items-center justify-between">Location & Contact <i data-lucide="chevron-right" class="w-5 h-5 text-textMuted"></i></a>
+            </nav>
+        </div>
+        <div class="flex flex-col gap-3 pt-6 border-t border-zinc-800">
+            <a href="tel:+919265785688" class="w-full h-12 rounded-xl border border-zinc-700 text-textPrimary font-semibold flex items-center justify-center gap-2 bg-zinc-900">
+                <i data-lucide="phone" class="w-5 h-5 text-primary"></i>
+                <span>Call +91 92657 85688</span>
+            </a>
+            <a href="https://wa.me/919265785688?text=Hi,%20I%20want%20to%20join%20Xtreme%20Fitness%20Gym!" target="_blank" class="w-full h-12 rounded-xl bg-primary text-white font-semibold flex items-center justify-center gap-2 glow-red-sm">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span>Chat on WhatsApp</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[90vh] flex items-center justify-center py-16 lg:py-24 overflow-hidden">
+        <!-- Background Image with Overlay & Radial Glow -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80" alt="Xtreme Fitness Gym Interior" class="w-full h-full object-cover object-center opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40"></div>
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+        </div>
+
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <!-- Trust Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface border border-zinc-800 mb-6 glow-red-sm">
+                <div class="flex items-center text-amber-400">
+                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                </div>
+                <span class="text-xs sm:text-sm font-semibold text-textPrimary">4.8 Rating <span class="text-textMuted font-normal">(65+ Google Reviews)</span></span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="font-syne text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight max-w-5xl mx-auto leading-[1.1] mb-6">
+                Unleash Your Ultimate Potential at <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-red-500 to-amber-500">Xtreme Fitness Gym</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-base sm:text-xl text-textMuted max-w-2xl mx-auto mb-10 leading-relaxed">
+                Surat’s premier destination for serious transformation. Premium equipment, expert coaching, weight training, cardio, and personalized workouts in Salabatpura.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <a href="#contact" class="w-full sm:w-auto h-14 px-8 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-base flex items-center justify-center gap-3 glow-red transition-all hover:scale-105">
+                    <i data-lucide="flame" class="w-5 h-5"></i>
+                    <span>Claim Free Trial</span>
+                </a>
+                <a href="https://wa.me/919265785688?text=Hi,%20I%20want%20to%20know%20more%20about%20gym%20membership%20plans." target="_blank" class="w-full sm:w-auto h-14 px-8 rounded-xl bg-surface hover:bg-zinc-800 border border-zinc-700 text-textPrimary font-bold text-base flex items-center justify-center gap-3 transition-all hover:border-zinc-500">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Quick USP pills -->
+            <div class="mt-14 pt-8 border-t border-zinc-800/80 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-zinc-800/60">
+                    <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-textMuted uppercase font-semibold">Timings</h4>
+                        <p class="text-sm font-bold text-textPrimary">6 AM - 10 PM</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-zinc-800/60">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-textMuted uppercase font-semibold">Training</h4>
+                        <p class="text-sm font-bold text-textPrimary">Male & Female</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-zinc-800/60">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 flex-shrink-0">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-textMuted uppercase font-semibold">Rating</h4>
+                        <p class="text-sm font-bold text-textPrimary">4.8 ★ (65+ Reviews)</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 p-3 rounded-xl bg-surface/50 border border-zinc-800/60">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xs text-textMuted uppercase font-semibold">Location</h4>
+                        <p class="text-sm font-bold text-textPrimary">Salabatpura, Surat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Social Proof Bar -->
+    <section class="py-10 bg-surface border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="flex flex-col items-center">
+                    <span class="font-syne text-3xl sm:text-4xl font-extrabold text-primary mb-1">4.8 / 5.0</span>
+                    <span class="text-sm text-textMuted font-medium">Google Rating</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-syne text-3xl sm:text-4xl font-extrabold text-white mb-1">65+</span>
+                    <span class="text-sm text-textMuted font-medium">Verified 5-Star Reviews</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-syne text-3xl sm:text-4xl font-extrabold text-primary mb-1">7 Days</span>
+                    <span class="text-sm text-textMuted font-medium">Open Every Week</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span class="font-syne text-3xl sm:text-4xl font-extrabold text-white mb-1">100%</span>
+                    <span class="text-sm text-textMuted font-medium">Professional Equipment</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Workouts Grid -->
+    <section id="services" class="py-20 lg:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">Elite Training Programs</span>
+                <h2 class="font-syne text-3xl sm:text-5xl font-extrabold mt-4 mb-6">Designed For Maximum Gains</h2>
+                <p class="text-textMuted text-base sm:text-lg">Whether you want to build raw muscle, burn fat, or improve overall athletic endurance, our structured workout regimes deliver results.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1: Weight Training -->
+                <div class="bg-surface rounded-2xl p-6 border border-zinc-800 hover:border-primary transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i data-lucide="dumbbell" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-syne text-xl font-bold mb-3">Weight Training</h3>
+                        <p class="text-textMuted text-sm leading-relaxed mb-6">Heavy-duty free weights, olympic barbells, dumbbells, and plate-loaded machines to sculpt muscle mass.</p>
+                    </div>
+                    <a href="https://wa.me/919265785688?text=Hi,%20I%20am%20interested%20in%20Weight%20Training%20at%20Xtreme%20Fitness." target="_blank" class="w-full h-11 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-primary text-textPrimary hover:text-primary text-sm font-semibold flex items-center justify-center gap-2 transition-colors">
+                        <span>Inquire Now</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: Cardio & Stamina -->
+                <div class="bg-surface rounded-2xl p-6 border border-zinc-800 hover:border-primary transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i data-lucide="heart-pulse" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-syne text-xl font-bold mb-3">Cardio & Stamina</h3>
+                        <p class="text-textMuted text-sm leading-relaxed mb-6">State-of-the-art treadmills, stationary bikes, and cross-trainers designed to burn calories and build lung capacity.</p>
+                    </div>
+                    <a href="https://wa.me/919265785688?text=Hi,%20I%20am%20interested%20in%20Cardio%20workouts%20at%20Xtreme%20Fitness." target="_blank" class="w-full h-11 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-primary text-textPrimary hover:text-primary text-sm font-semibold flex items-center justify-center gap-2 transition-colors">
+                        <span>Inquire Now</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Station Workouts -->
+                <div class="bg-surface rounded-2xl p-6 border border-zinc-800 hover:border-primary transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i data-lucide="activity" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-syne text-xl font-bold mb-3">Station Workouts</h3>
+                        <p class="text-textMuted text-sm leading-relaxed mb-6">Multi-station setups and functional training zones for circuit training, core conditioning, and agility.</p>
+                    </div>
+                    <a href="https://wa.me/919265785688?text=Hi,%20I%20am%20interested%20in%20Station%20Workouts%20at%20Xtreme%20Fitness." target="_blank" class="w-full h-11 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-primary text-textPrimary hover:text-primary text-sm font-semibold flex items-center justify-center gap-2 transition-colors">
+                        <span>Inquire Now</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4: Stick Workouts -->
+                <div class="bg-surface rounded-2xl p-6 border border-zinc-800 hover:border-primary transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                            <i data-lucide="zap" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-syne text-xl font-bold mb-3">Stick Workouts</h3>
+                        <p class="text-textMuted text-sm leading-relaxed mb-6">Dynamic mobility and flexibility routines using fitness sticks to enhance posture, coordination, and core strength.</p>
+                    </div>
+                    <a href="https://wa.me/919265785688?text=Hi,%20I%20am%20interested%20in%20Stick%20Workouts%20at%20Xtreme%20Fitness." target="_blank" class="w-full h-11 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-primary text-textPrimary hover:text-primary text-sm font-semibold flex items-center justify-center gap-2 transition-colors">
+                        <span>Inquire Now</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 lg:py-28 bg-surface/50 border-y border-zinc-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div>
+                    <span class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">The Xtreme Advantage</span>
+                    <h2 class="font-syne text-3xl sm:text-5xl font-extrabold mt-4 mb-6 leading-tight">Why Surat Fitness Enthusiasts Choose Us</h2>
+                    <p class="text-textMuted text-base sm:text-lg mb-8 leading-relaxed">
+                        We aren’t just a gym; we are a community of dedicated individuals pushing past their limits. Here is what sets Xtreme Fitness apart from ordinary gyms.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 mt-1">
+                                <i data-lucide="clock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-syne text-lg font-bold mb-1">Flexible Timings (6 AM - 10 PM)</h3>
+                                <p class="text-textMuted text-sm">Open 7 days a week with extended hours so you can work out before work, during lunch, or late evening.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 mt-1">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-syne text-lg font-bold mb-1">Expert & Supportive Trainers</h3>
+                                <p class="text-textMuted text-sm">Certified coaches who guide your form, prevent injuries, and tailor routines to your individual fitness goals.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0 mt-1">
+                                <i data-lucide="shield" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-syne text-lg font-bold mb-1">Premium Heavy-Duty Equipment</h3>
+                                <p class="text-textMuted text-sm">Immaculately maintained machinery, clean workout floors, and top-tier weights for optimal performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-zinc-700 shadow-2xl aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1000&q=80" alt="Gym training environment" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-background/90 backdrop-blur-md border border-zinc-800">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-syne font-bold text-xl">4.8</div>
+                                <div>
+                                    <h4 class="font-syne font-bold text-base">Top Rated in Salabatpura</h4>
+                                    <p class="text-xs text-textMuted">Loved by over 65+ active gym members in Surat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Story Section -->
+    <section id="about" class="py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80" alt="Workout equipment" class="rounded-2xl object-cover w-full aspect-[3/4] border border-zinc-800">
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Fitness training" class="rounded-2xl object-cover w-full aspect-[3/4] border border-zinc-800">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-1 lg:order-2">
+                    <span class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">Our Story & Mission</span>
+                    <h2 class="font-syne text-3xl sm:text-5xl font-extrabold mt-4 mb-6 leading-tight">Forging Strength in the Heart of Surat</h2>
+                    <p class="text-textMuted text-base sm:text-lg mb-6 leading-relaxed">
+                        Located conveniently at Paiki Basement, Celebrity Homes, Zampa Bazaar, Inderpura Ranawad, Salabatpura, Xtreme Fitness Gym has established itself as the go-to fitness hub for individuals determined to change their lives.
+                    </p>
+                    <p class="text-textMuted text-base sm:text-lg mb-8 leading-relaxed">
+                        We believe fitness is for everyone. Whether you are stepping into a gym for the very first time or you are an experienced lifter chasing new personal records, our doors are open with an energetic, ego-free atmosphere that motivates you to push further.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://wa.me/919265785688?text=Hi,%20I%20would%20like%20to%20visit%20Xtreme%20Fitness%20Gym." target="_blank" class="h-12 px-6 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-sm flex items-center gap-2 glow-red-sm transition-all">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            <span>Plan a Visit</span>
+                        </a>
+                        <a href="tel:+919924177252" class="h-12 px-6 rounded-xl bg-surface hover:bg-zinc-800 border border-zinc-700 text-textPrimary font-bold text-sm flex items-center gap-2 transition-all">
+                            <i data-lucide="phone" class="w-4 h-4 text-primary"></i>
+                            <span>+91 99241 77252</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Gallery -->
+    <section id="gallery" class="py-20 lg:py-28 bg-surface/50 border-y border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">Gym Floor</span>
+                <h2 class="font-syne text-3xl sm:text-5xl font-extrabold mt-4 mb-6">Explore Our Facility</h2>
+                <p class="text-textMuted text-base sm:text-lg">Take a virtual peek inside Xtreme Fitness Gym. Spacious training floors, heavy weights, and pristine equipment.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-2xl overflow-hidden border border-zinc-800 aspect-video">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80" alt="Gym Floor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-syne font-bold text-lg text-white">Main Workout Floor</span>
+                    </div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden border border-zinc-800 aspect-video">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80" alt="Weights Area" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-syne font-bold text-lg text-white">Dumbbells & Barbells Zone</span>
+                    </div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden border border-zinc-800 aspect-video">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Cardio Equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-syne font-bold text-lg text-white">Cardio & Endurance Area</span>
+                    </div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden border border-zinc-800 aspect-video">
+                    <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80" alt="Station Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-syne font-bold text-lg text-white">Functional & Station Zone</span>
+                    </div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden border border-zinc-800 aspect-video">
+                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=800&q=80" alt="Strength Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-syne font-bold text-lg text-white">Strength Machines</span>
+                    </div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden border border-zinc-800 aspect-video">
+                    <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Fitness Motivation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <span class="font-syne font-bold text-lg text-white">Dedicated Training Vibe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">Testimonials</span>
+                <h2 class="font-syne text-3xl sm:text-5xl font-extrabold mt-4 mb-6">Loved by Surat Members</h2>
+                <div class="flex items-center justify-center gap-2 text-amber-400 mb-2">
+                    <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 fill-amber-400"></i>
+                </div>
+                <p class="text-textMuted text-base sm:text-lg">Rated 4.8 / 5.0 based on 65+ authentic Google reviews.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-surface rounded-2xl p-8 border border-zinc-800 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-primary/20">
+                        <i data-lucide="quote" class="w-10 h-10"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-textMuted text-sm sm:text-base leading-relaxed mb-6">
+                            "Amazing gym in Salabatpura! The equipment is top-notch and well maintained. Trainers are extremely helpful and guide you properly with weight training. Highly recommended!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-zinc-800">
+                        <div class="w-10 h-10 rounded-full bg-primary/20 text-primary font-syne font-bold flex items-center justify-center">R</div>
+                        <div>
+                            <h4 class="font-syne font-bold text-sm text-textPrimary">Rajeshwala Desai</h4>
+                            <p class="text-xs text-textMuted">Google Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-surface rounded-2xl p-8 border border-zinc-800 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-primary/20">
+                        <i data-lucide="quote" class="w-10 h-10"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-textMuted text-sm sm:text-base leading-relaxed mb-6">
+                            "Best atmosphere for serious workouts. Open from early morning till late night which fits my work schedule perfectly. Great station and cardio equipment!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-zinc-800">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-syne font-bold flex items-center justify-center">A</div>
+                        <div>
+                            <h4 class="font-syne font-bold text-sm text-textPrimary">Ankit Jariwala</h4>
+                            <p class="text-xs text-textMuted">Verified Member</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-surface rounded-2xl p-8 border border-zinc-800 flex flex-col justify-between relative">
+                    <div class="absolute top-6 right-6 text-primary/20">
+                        <i data-lucide="quote" class="w-10 h-10"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 mb-4">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                        </div>
+                        <p class="text-textMuted text-sm sm:text-base leading-relaxed mb-6">
+                            "Safe environment for both men and women. Trainers pay personal attention and the pricing is very reasonable for the quality provided. 5 stars!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-zinc-800">
+                        <div class="w-10 h-10 rounded-full bg-amber-500/20 text-amber-400 font-syne font-bold flex items-center justify-center">P</div>
+                        <div>
+                            <h4 class="font-syne font-bold text-sm text-textPrimary">Priya Surti</h4>
+                            <p class="text-xs text-textMuted">Verified Member</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="py-20 lg:py-28 bg-surface/50 border-y border-zinc-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">Got Questions?</span>
+                <h2 class="font-syne text-3xl sm:text-5xl font-extrabold mt-4 mb-6">Frequently Asked Questions</h2>
+                <p class="text-textMuted text-base sm:text-lg">Everything you need to know about joining Xtreme Fitness Gym.</p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-surface rounded-2xl border border-zinc-800 overflow-hidden transition-all">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-syne text-lg font-bold">What are the operating hours of Xtreme Fitness Gym?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-textMuted text-sm sm:text-base leading-relaxed">
+                        <p class="pb-6">We are open daily from 6:00 AM to 10:00 PM, 7 days a week. You can work out at your convenience whether early morning or late night.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-surface rounded-2xl border border-zinc-800 overflow-hidden transition-all">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-syne text-lg font-bold">Where is the gym located?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-textMuted text-sm sm:text-base leading-relaxed">
+                        <p class="pb-6">We are located at Paiki Basement, Celebrity Homes, 3/1212 to 1214, Zampa Bazaar, Inderpura Ranawad, Salabatpura, Surat, Gujarat 395003.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-surface rounded-2xl border border-zinc-800 overflow-hidden transition-all">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-syne text-lg font-bold">Are trainers available to assist beginners?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-textMuted text-sm sm:text-base leading-relaxed">
+                        <p class="pb-6">Yes! Our certified expert trainers are always on the floor to guide beginners on proper form, routine creation, and injury prevention.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-surface rounded-2xl border border-zinc-800 overflow-hidden transition-all">
+                    <button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none">
+                        <span class="font-syne text-lg font-bold">Do you offer personal training or free trials?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-primary transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-6 text-textMuted text-sm sm:text-base leading-relaxed">
+                        <p class="pb-6">Yes, we offer trial sessions so you can experience our facility before committing. Contact us via WhatsApp or phone to claim your free trial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Location & Contact Section -->
+    <section id="contact" class="py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary text-xs sm:text-sm font-bold uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20">Get In Touch</span>
+                <h2 class="font-syne text-3xl sm:text-5xl font-extrabold mt-4 mb-6">Visit Or Message Us</h2>
+                <p class="text-textMuted text-base sm:text-lg">Ready to transform? Drop by our Surat location or fill out the form for instant response.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form & Info -->
+                <div class="bg-surface rounded-3xl p-8 border border-zinc-800 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-syne text-2xl font-bold mb-6">Send Membership Inquiry</h3>
+                        <form id="inquiry-form" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-textMuted mb-2">Your Full Name</label>
+                                <input type="text" id="name" required class="w-full h-12 bg-zinc-900 border border-zinc-700 rounded-xl px-4 text-textPrimary text-sm focus:outline-none focus:border-primary transition-colors" placeholder="e.g. Rahul Sharma">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-textMuted mb-2">Phone / WhatsApp Number</label>
+                                <input type="tel" id="phone" required class="w-full h-12 bg-zinc-900 border border-zinc-700 rounded-xl px-4 text-textPrimary text-sm focus:outline-none focus:border-primary transition-colors" placeholder="e.g. +91 98765 43210">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-textMuted mb-2">Interested Workout / Plan</label>
+                                <select id="service" class="w-full h-12 bg-zinc-900 border border-zinc-700 rounded-xl px-4 text-textPrimary text-sm focus:outline-none focus:border-primary transition-colors">
+                                    <option value="Weight Training">Weight Training</option>
+                                    <option value="Cardio & Stamina">Cardio & Stamina</option>
+                                    <option value="Station Workouts">Station Workouts</option>
+                                    <option value="Stick Workouts">Stick Workouts</option>
+                                    <option value="General Membership">General Membership</option>
+                                    <option value="Free Trial">Claim Free Trial</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-textMuted mb-2">Message or Fitness Goal</label>
+                                <textarea id="message" rows="3" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl p-4 text-textPrimary text-sm focus:outline-none focus:border-primary transition-colors" placeholder="Tell us your goals..."></textarea>
+                            </div>
+                            <button type="submit" id="submit-btn" class="w-full h-14 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl flex items-center justify-center gap-2 glow-red-sm transition-all hover:scale-[1.02]">
+                                <span id="btn-text">Submit Inquiry via WhatsApp</span>
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-zinc-800 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-textMuted uppercase font-semibold">Direct Call</span>
+                                <p class="text-sm font-bold text-textPrimary">+91 92657 85688 / +91 99241 77252</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-textMuted uppercase font-semibold">Instant WhatsApp</span>
+                                <p class="text-sm font-bold text-textPrimary">Chat anytime for quick inquiry</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Maps & Hours -->
+                <div class="flex flex-col gap-6">
+                    <div class="bg-surface rounded-3xl p-6 border border-zinc-800">
+                        <h3 class="font-syne text-xl font-bold mb-4">Location & Directions</h3>
+                        <p class="text-textMuted text-sm mb-4">Paiki Basement, Celebrity Homes, 3/1212 to 1214, Zampa Bazaar, Inderpura Ranawad, Salabatpura, Surat, Gujarat 395003</p>
+                        
+                        <!-- Responsive Google Maps Embed -->
+                        <div class="w-full h-72 rounded-2xl overflow-hidden border border-zinc-700 mb-4">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.995914616239!2d72.8337157!3d21.1929261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f88404224ad%3A0xb799f0f454836b5d!2sXtreme%20Fitness%20Gym!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <a href="https://www.google.com/maps/place/Xtreme+Fitness+Gym/data=!4m7!3m6!1s0x3be04f88404224ad:0xb799f0f454836b5d!8m2!3d21.1929261!4d72.8337157!16s%2Fg%2F11pw2rkpl2!19sChIJrSRCQIhP4DsRXWuDVPTwmbc?authuser=0&hl=en" target="_blank" class="w-full h-12 rounded-xl bg-zinc-900 border border-zinc-700 hover:border-primary text-textPrimary text-sm font-semibold flex items-center justify-center gap-2 transition-colors">
+                            <i data-lucide="navigation" class="w-4 h-4 text-primary"></i>
+                            <span>Get Directions on Google Maps</span>
+                        </a>
+                    </div>
+
+                    <div class="bg-surface rounded-3xl p-6 border border-zinc-800">
+                        <h3 class="font-syne text-xl font-bold mb-4">Gym Timings</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between py-2 border-b border-zinc-800">
+                                <span class="text-textMuted">Monday - Sunday</span>
+                                <span class="font-bold text-textPrimary">6:00 AM – 10:00 PM</span>
+                            </div>
+                            <div class="flex justify-between py-2">
+                                <span class="text-textMuted">Training Status</span>
+                                <span class="font-bold text-emerald-400 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Open Every Day</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal Popup -->
+    <div id="success-modal" class="fixed inset-0 z-50 bg-background/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="bg-surface border border-zinc-700 rounded-3xl p-8 max-w-md w-full text-center relative glow-red">
+            <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check" class="w-8 h-8"></i>
+            </div>
+            <h3 class="font-syne text-2xl font-bold mb-2">Inquiry Received!</h3>
+            <p class="text-textMuted text-sm mb-6">Thank you! Redirecting you to WhatsApp to connect directly with Xtreme Fitness Gym...</p>
+            <button id="close-modal" class="w-full h-12 rounded-xl bg-primary text-white font-bold text-sm">Close</button>
+        </div>
+    </div>
+
+    <!-- Sticky Mobile Action Bar -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-t border-zinc-800 p-3 flex items-center gap-3">
+        <a href="tel:+919265785688" class="flex-1 h-12 rounded-xl border border-zinc-700 bg-surface text-textPrimary text-sm font-bold flex items-center justify-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-primary"></i>
+            <span>Call Now</span>
+        </a>
+        <a href="https://wa.me/919265785688?text=Hi,%20I%20want%20to%20join%20Xtreme%20Fitness%20Gym!" target="_blank" class="flex-1 h-12 rounded-xl bg-primary hover:bg-primary-hover text-white text-sm font-bold flex items-center justify-center gap-2 glow-red-sm">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            <span>WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface border-t border-zinc-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center glow-red-sm">
+                            <i data-lucide="dumbbell" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <span class="font-syne text-xl font-extrabold tracking-wider text-white">XTREME<span class="text-primary">FITNESS</span></span>
+                    </a>
+                    <p class="text-textMuted text-sm leading-relaxed mb-6">
+                        Surat’s elite destination for weight training, cardio, and personalized transformation. Unleash your ultimate potential today.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://wa.me/919265785688" target="_blank" class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-textPrimary hover:text-primary transition-colors">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                        <a href="tel:+919265785688" class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-textPrimary hover:text-primary transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.google.com/maps/place/Xtreme+Fitness+Gym/data=!4m7!3m6!1s0x3be04f88404224ad:0xb799f0f454836b5d!8m2!3d21.1929261!4d72.8337157" target="_blank" class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-textPrimary hover:text-primary transition-colors">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-syne font-bold text-base mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-textMuted">
+                        <li><a href="#about" class="hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Workouts & Services</a></li>
+                        <li><a href="#why-us" class="hover:text-primary transition-colors">Why Choose Us</a></li>
+                        <li><a href="#gallery" class="hover:text-primary transition-colors">Gym Gallery</a></li>
+                        <li><a href="#reviews" class="hover:text-primary transition-colors">Customer Reviews</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-syne font-bold text-base mb-4 text-white">Workouts</h4>
+                    <ul class="space-y-2 text-sm text-textMuted">
+                        <li><a href="#services" class="hover:text-primary transition-colors">Weight Training</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Cardio & Stamina</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Station Workouts</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Stick Workouts</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors">Free Trial Sessions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-syne font-bold text-base mb-4 text-white">Contact Info</h4>
+                    <ul class="space-y-3 text-sm text-textMuted">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"></i>
+                            <span>Paiki Basement, Celebrity Homes, 3/1212 to 1214, Zampa Bazaar, Inderpura Ranawad, Salabatpura, Surat, Gujarat 395003</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-primary flex-shrink-0"></i>
+                            <span>+91 92657 85688 / +91 99241 77252</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4 text-primary flex-shrink-0"></i>
+                            <span>Open Daily: 6 AM - 10 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between text-xs text-textMuted gap-4">
+                <p>&copy; <span id="current-year"></span> Xtreme Fitness Gym. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="https://www.google.com/maps/place/Xtreme+Fitness+Gym/data=!4m7!3m6!1s0x3be04f88404224ad:0xb799f0f454836b5d!8m2!3d21.1929261!4d72.8337157" target="_blank" class="hover:text-primary transition-colors">Google Maps Listing</a>
+                    <a href="tel:+919265785688" class="hover:text-primary transition-colors">Direct Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenu.classList.contains('translate-x-0');
+            if (isOpen) {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            } else {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileMenuClose.addEventListener('click', toggleMobileMenu);
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // FAQ Accordion
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('lucide-icon, svg');
+                
+                // Close other accordions
+                faqToggles.forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        otherToggle.nextElementSibling.style.maxHeight = null;
+                        const otherIcon = otherToggle.querySelector('lucide-icon, svg');
+                        if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    if (icon) icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Inquiry Form Handling & WhatsApp redirect
+        const inquiryForm = document.getElementById('inquiry-form');
+        const successModal = document.getElementById('success-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        inquiryForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappText = `Hi, my name is ${name}. Phone: ${phone}. Interested in: ${service}. Message: ${message}`;
+            const encodedText = encodeURIComponent(whatsappText);
+
+            // Show success modal
+            successModal.classList.remove('hidden');
+            successModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+
+            // Open WhatsApp after short delay
+            setTimeout(() => {
+                window.open(`https://wa.me/919265785688?text=${encodedText}`, '_blank');
+            }, 1500);
+        });
+
+        closeModal.addEventListener('click', () => {
+            successModal.classList.remove('flex');
+            successModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            inquiryForm.reset();
+        });
+    </script>
+</body>
+</html>
